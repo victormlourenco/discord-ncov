@@ -1,0 +1,8 @@
+{
+    "token": "YOUR_DISCORD_TOKEN",
+    "channelId": "YOUR_CHANNEL_ID",
+    "uri": "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/2/query?f=json&where=Confirmed%20%3E%200&outFields=Country_Region,Deaths,Confirmed,Recovered&orderByFields=Confirmed%20desc&returnGeometry=false",
+    "command": ".ncov",
+    "interval": 10,
+    "mask": "🗺️ Country: **%s**\n🤢 Confirmed: **%d**\n☠️ Deaths: **%d**\n😀 Recovery: **%d**"
+}
