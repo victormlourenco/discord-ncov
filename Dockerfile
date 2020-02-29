@@ -1,11 +1,13 @@
-# Dockerfile References: https://docs.docker.com/engine/reference/builder/
-# Start from the latest golang base image
-FROM golang:latest
-# Set the Current Working Directory inside the container
-WORKDIR /app
-# Copy everything from the current directory to the Working Directory inside the container
-COPY . .
-# Build the Go app
-RUN go build -o main .
-# Command to run the executable
-CMD ["./main"]
+FROM golang
+
+ARG CONFIG_FILE="config.json"
+ENV CONFIG_FILE=$CONFIG_FILE
+
+WORKDIR /go/src/discord-ncov
+ADD . /go/src/discord-ncov
+
+COPY $CONFIG_FILE /go/src/discord-ncov/config.json
+
+# Build it:
+RUN go get
+CMD go run main.go
