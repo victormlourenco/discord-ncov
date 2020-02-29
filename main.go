@@ -93,7 +93,7 @@ func heartBeat(s *discordgo.Session) {
 
 func formatMessage(result model.Latest) string {
 	if result.Country == "" {
-		return "Local não encontrado."
+		return "No confirmed cases or country not found."
 	}
 	return fmt.Sprintf(c.Mask, result.Country, result.Confirmed, result.Deaths, result.Recovered)
 }
